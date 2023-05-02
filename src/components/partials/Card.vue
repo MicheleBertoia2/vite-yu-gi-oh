@@ -3,24 +3,22 @@
 export default {
   name: "Card",
   props:{
-    cardName: String,
-    cardImage: String,
-    cardArchetype: String
+    cardObj: Object
+    
   }
 }
 </script>
 
 <template>
   <div class="mb-card mb-3">
-    <!-- <img :src="cardImage" :alt="cardName"> -->
-    <img src="https://images.ygoprodeck.com/images/cards/50371210.jpg" alt="">
+   <img
+      :src="cardObj.card_images[0].image_url"
+      :alt="cardObj.name">
     <div class="mb-text text-center">
-      <p>Beacon of whitedddsssssaaaaaaaaa</p>
-      <!-- <span>{{ cardName }}</span> -->
+      <p>{{ cardObj.name }}</p>
     </div>
     <div class="archetype text-center">
-      <span class="my-auto">blue eyes</span>
-      <!-- <span>{{ cardArchetype }}</span> -->
+      <span>{{ cardObj.archetype }}</span>
     </div>
   </div>
 </template>

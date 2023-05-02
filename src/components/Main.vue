@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-  <div class="mb-main">
+  <div class="mb-main pb-3">
     <div class="input-field container">
       <select name="archetype" id="archetype">
         <option value="Blue-Eyes">Blue-Eyes</option>
