@@ -1,13 +1,19 @@
 
 <script>
+import {store} from "../../data/store";
 export default {
-  name: "TotalResult"
+  name: "TotalResult",
+  data(){
+    return{
+      store,
+    }
+  }
 }
 </script>
 
 <template>
   <div>
-    <h3>Carte trovate: 39 </h3>
+    <h3>Carte trovate: {{ store.cardsDisplayed.length }} </h3>
   </div>
 </template>
 
