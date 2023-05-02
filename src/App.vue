@@ -3,7 +3,7 @@
 import axios from "axios";
 
 import Header from "./components/Header.vue";
-import CardsContainer from "./components/CardsContainer.vue";
+import Main from "./components/Main.vue";
 
 import {store} from "./data/store";
 
@@ -11,7 +11,7 @@ export default {
   name: "App",
   components : {
     Header,
-    CardsContainer,
+    Main,
   },
   data(){
     return{
@@ -36,7 +36,7 @@ export default {
 
 <template>
   <Header />
-  <CardsContainer />
+  <Main />
 </template>
 
 <style lang="scss">
