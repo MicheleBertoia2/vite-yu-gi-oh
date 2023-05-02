@@ -1,14 +1,20 @@
 
 <script>
 export default {
-  
+  name: "TotalResult"
 }
 </script>
 
 <template>
-  <h2>risultato totale</h2>
+  <div>
+    <h3>Carte trovate: 39 </h3>
+  </div>
 </template>
 
-<style>
-
+<style lang="scss" scoped>
+  div{
+    background-color: black;
+    color: white;
+    padding: 10px 5px;
+  }
 </style>

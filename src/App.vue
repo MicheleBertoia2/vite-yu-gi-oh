@@ -24,7 +24,8 @@ export default {
     getApi(){
       axios.get(store.basicApiUrl + this.archetypeStr)
         .then(result =>{
-          console.log(result.data);
+          store.cardsDisplayed = result.data
+          console.log(store.cardsDisplayed);
         })
     }
   },

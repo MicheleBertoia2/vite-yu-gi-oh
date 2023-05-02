@@ -1,10 +1,12 @@
 
 <script>
 import TotalResult from "./partials/TotalResult.vue";
+import CardsContainer from "./partials/CardsContainer.vue";
 export default {
   name: "Main",
   components: {
     TotalResult,
+    CardsContainer,
   }
 }
 </script>
@@ -18,13 +20,14 @@ export default {
     </div>
     <div class="container mb-container h-100 p-5">
       <TotalResult />
+      <CardsContainer />
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+
   .mb-main{
-    height: calc(100vh -  80px);
     background-color:#d48f38;
     .input-field{
       padding: 20px;
