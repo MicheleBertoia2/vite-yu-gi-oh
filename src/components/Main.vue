@@ -2,20 +2,41 @@
 <script>
 import TotalResult from "./partials/TotalResult.vue";
 import CardsContainer from "./partials/CardsContainer.vue";
+import {store} from "../data/store";
 export default {
   name: "Main",
   components: {
     TotalResult,
     CardsContainer,
+  },
+  data(){
+    return{
+      store,
+    }
+  },
+  methods:{
+    evento(){
+      this.$emit("altroEvento")
+    }
   }
+  
 }
 </script>
 
 <template>
   <div class="mb-main pb-3">
     <div class="input-field container">
-      <select name="archetype" id="archetype">
-        <option value="Blue-Eyes">Blue-Eyes</option>
+      <select
+        name="archetype"
+        id="archetype"
+        v-model="store.frameTypeStr"
+        @click="evento">
+
+        <option value="">Select Type</option>
+        <option
+          v-for="(type, index) in store.frameTypeList" :key="index"
+          :value="type">{{ type }}</option>
+
       </select>
     </div>
     <div class="container mb-container h-100 p-5">

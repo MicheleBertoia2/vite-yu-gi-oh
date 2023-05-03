@@ -26,19 +26,28 @@ export default {
         params: {
           num: 600,
           offset: 0,
-          frameType: ""
+          type: store.frameTypeStr
         }
       })
         .then(result =>{
           store.cardsDisplayed = result.data.data
           store.cardsDisplayed.forEach(element => {
-            if(!store.frameTypeList.includes(element.frameType)){
-              store.frameTypeList.push(element.frameType)
+            if(!store.frameTypeList.includes(element.type)){
+              store.frameTypeList.push(element.type)
             }
           });
           console.log(store.frameTypeList);
         })
+    },
+    
+    startSearch(){
+    store.apiUrl = store.basicApiUrl;
+    store.cardsDisplayed = [];
+    this.getApi()
+    console.log(store.cardsDisplayed,store.frameTypeStr);
+    
     }
+  
   },
   mounted(){
     store.apiUrl = store.basicApiUrl
@@ -49,7 +58,7 @@ export default {
 
 <template>
   <Header />
-  <Main />
+  <Main @altroEvento="startSearch()" />
 </template>
 
 <style lang="scss">
