@@ -30,7 +30,7 @@ export default {
         name="archetype"
         id="archetype"
         v-model="store.frameTypeStr"
-        @click="evento">
+        @change="evento">
 
         <option value="">Select Type</option>
         <option

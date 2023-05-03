@@ -5,5 +5,5 @@ export const store = reactive({
   apiUrl: null, 
   cardsDisplayed: [], 
   frameTypeList: [],
-  frameTypeStr: "Effect Monster"
+  frameTypeStr: "effect monster",
 })

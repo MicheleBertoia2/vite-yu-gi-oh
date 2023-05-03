@@ -17,6 +17,7 @@ export default {
     return{
       store,
       archetypeStr: "Blue-Eyes",
+     
       
     }
   },
@@ -24,10 +25,10 @@ export default {
     getApi(){
       axios.get(store.apiUrl,{
         params: {
-          num: 600,
+         num: 600,
           offset: 0,
-          type: store.frameTypeStr
-        }
+          type: store.frameTypeStr,
+         } 
       })
         .then(result =>{
           store.cardsDisplayed = result.data.data
@@ -44,7 +45,6 @@ export default {
     store.apiUrl = store.basicApiUrl;
     store.cardsDisplayed = [];
     this.getApi()
-    console.log(store.cardsDisplayed,store.frameTypeStr);
     
     }
   
