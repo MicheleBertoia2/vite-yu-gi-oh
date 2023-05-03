@@ -22,14 +22,26 @@ export default {
   },
   methods: {
     getApi(){
-      axios.get(store.basicApiUrl + this.archetypeStr)
+      axios.get(store.apiUrl,{
+        params: {
+          num: 600,
+          offset: 0,
+          frameType: ""
+        }
+      })
         .then(result =>{
           store.cardsDisplayed = result.data.data
-          console.log(store.cardsDisplayed);
+          store.cardsDisplayed.forEach(element => {
+            if(!store.frameTypeList.includes(element.frameType)){
+              store.frameTypeList.push(element.frameType)
+            }
+          });
+          console.log(store.frameTypeList);
         })
     }
   },
   mounted(){
+    store.apiUrl = store.basicApiUrl
     this.getApi()
   }
 }

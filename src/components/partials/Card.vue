@@ -18,7 +18,7 @@ export default {
       <p>{{ cardObj.name }}</p>
     </div>
     <div class="archetype text-center">
-      <span>{{ cardObj.archetype }}</span>
+      <span>{{ cardObj.frameType }}</span>
     </div>
   </div>
 </template>
